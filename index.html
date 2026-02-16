@@ -1,0 +1,2857 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>HÔTELS & MAISONS D’HÔTES - Collection d’hébergements de charme</title>
+    
+    <!-- Meta tags -->
+    <meta name="description" content="Collection d’hôtels boutiques et maisons d’hôtes d’exception. Expériences authentiques, réservation directe sans commission, charme et hospitalité personnalisée.">
+    <meta name="keywords" content="hôtel boutique, maison d’hôtes, bed and breakfast, lodge, hébergement de charme, réservation directe">
+    <meta name="author" content="Collection H&H">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Réseaux sociaux -->
+    <meta property="og:title" content="HÔTELS & MAISONS D’HÔTES - Collection d’hébergements de charme">
+    <meta property="og:description" content="L’art de l’hospitalité authentique. Réservation directe, sans intermédiaire.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hotels-maisonsdhotes.com">
+    <meta property="og:image" content="https://hotels-maisonsdhotes.com/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23F28B30'/><rect x='20' y='45' width='60' height='40' rx='4' fill='white'/><circle cx='35' cy='65' r='8' fill='%23F28B30'/><circle cx='65' cy='65' r='8' fill='%23F28B30'/><path d='M30 25 L50 10 L70 25' stroke='white' stroke-width='8' fill='none'/></svg>">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* ===== VARIABLES - HÔTELS & MAISONS D’HÔTES ===== */
+        :root {
+            --orange: #F28B30;        /* Accent chaleureux, soleil, hospitalité */
+            --blue: #3B5B8A;          /* Confiance, sérénité, professionnalisme */
+            --sand: #F5F1E8;          /* Beige naturel, chaleur, authenticité */
+            --cream: #FAF7F2;         /* Douceur, élégance intemporelle */
+            --brown: #8B7355;         /* Bois, nature, raffinement */
+            --green: #5E8C6A;         /* Verdure, environnement, calme */
+            --white: #FFFFFF;
+            --grey-light: #F8F7F5;
+            --grey: #DCD7CD;
+            --grey-dark: #5C534B;
+            --black: #2C2824;
+            
+            --shadow-sm: 0 5px 20px rgba(0,0,0,0.03);
+            --shadow: 0 15px 35px rgba(44,40,36,0.05);
+            --shadow-lg: 0 25px 50px rgba(44,40,36,0.08);
+            --border: 1px solid rgba(139,115,85,0.1);
+            --border-soft: 1px solid rgba(242,139,48,0.15);
+            
+            --border-radius-sm: 8px;
+            --border-radius: 16px;
+            --border-radius-lg: 24px;
+            --border-radius-xl: 32px;
+            
+            --transition: all 0.3s ease;
+            
+            --font-serif: 'Cormorant Garamond', serif;
+            --font-sans: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-serif);
+            font-weight: 600;
+            color: var(--black);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        h1 { 
+            font-size: 3.5rem; 
+            font-weight: 700; 
+            letter-spacing: -0.02em; 
+            margin-bottom: 1.5rem; 
+        }
+        
+        h2 { 
+            font-size: 2.8rem; 
+            margin-bottom: 1.2rem; 
+            font-weight: 600; 
+        }
+        
+        h3 { 
+            font-size: 1.8rem; 
+            margin-bottom: 1rem; 
+            font-family: var(--font-serif);
+        }
+        
+        h4 { 
+            font-size: 1.3rem; 
+            margin-bottom: 0.8rem; 
+            font-family: var(--font-sans);
+            font-weight: 600;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* ===== TYPOGRAPHIE ÉLÉGANTE ===== */
+        .serif {
+            font-family: var(--font-serif);
+        }
+
+        .sans {
+            font-family: var(--font-sans);
+        }
+
+        .section-title {
+            font-family: var(--font-serif);
+            font-size: 2.8rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+            color: var(--black);
+        }
+
+        .section-title span {
+            color: var(--orange);
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 3px;
+            background: var(--orange);
+            border-radius: 2px;
+        }
+
+        .text-center .section-title::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .section-subtitle {
+            font-family: var(--font-sans);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            font-weight: 500;
+            color: var(--orange);
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* ===== ACCESSIBILITÉ ===== */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--brown);
+            color: white;
+            padding: 12px 24px;
+            text-decoration: none;
+            z-index: 9999;
+            border-radius: 0 0 8px 8px;
+            font-weight: 500;
+        }
+
+        .skip-link:focus {
+            top: 0;
+        }
+
+        *:focus {
+            outline: 3px solid var(--orange);
+            outline-offset: 4px;
+        }
+
+        /* ===== TOP BAR ÉLÉGANT ===== */
+        .top-bar {
+            background: var(--black);
+            color: white;
+            padding: 12px 0;
+            font-size: 0.9rem;
+            border-bottom: 2px solid var(--orange);
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .top-info {
+            display: flex;
+            gap: 30px;
+        }
+
+        .top-info i {
+            margin-right: 8px;
+            color: var(--orange);
+        }
+
+        .top-guest {
+            background: rgba(242,139,48,0.15);
+            padding: 6px 18px;
+            border-radius: 50px;
+            font-weight: 500;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            border: 1px solid rgba(242,139,48,0.3);
+        }
+
+        .top-lang {
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-lang a {
+            color: rgba(255,255,255,0.8);
+            text-decoration: none;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .top-lang a.active {
+            color: white;
+            font-weight: 700;
+            background: var(--orange);
+        }
+
+        /* ===== NAVIGATION LUXE ===== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            background: rgba(255,255,255,0.98);
+            backdrop-filter: blur(10px);
+            padding: 20px 0;
+            z-index: 1000;
+            border-bottom: var(--border);
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+        }
+
+        .navbar.scrolled {
+            padding: 15px 0;
+            box-shadow: var(--shadow);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 55px;
+            height: 55px;
+            background: var(--orange);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+            font-family: var(--font-serif);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(-5deg) scale(1.05);
+            background: var(--brown);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-main {
+            font-family: var(--font-serif);
+            font-weight: 700;
+            font-size: 1.7rem;
+            color: var(--black);
+            letter-spacing: 1px;
+        }
+
+        .logo-sub {
+            font-family: var(--font-sans);
+            font-size: 0.7rem;
+            color: var(--orange);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 45px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 500;
+            font-size: 0.95rem;
+            padding: 8px 0;
+            position: relative;
+            transition: var(--transition);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-menu a::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--orange);
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.4s ease;
+        }
+
+        .nav-menu a:hover::before,
+        .nav-menu a.active::before {
+            transform: scaleX(1);
+            transform-origin: left;
+        }
+
+        .nav-menu a:hover,
+        .nav-menu a.active {
+            color: var(--orange);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .btn-reserve {
+            background: var(--orange);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn-reserve:hover {
+            background: var(--brown);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 28px;
+            height: 2px;
+            background: var(--black);
+            margin: 6px 0;
+            transition: var(--transition);
+            border-radius: 1px;
+        }
+
+        /* ===== BOUTONS ÉLÉGANTS ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .btn-primary {
+            background: var(--orange);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--brown);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--black);
+            border: 2px solid var(--brown);
+        }
+
+        .btn-outline:hover {
+            background: var(--brown);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .btn-light {
+            background: var(--sand);
+            color: var(--black);
+            border: 1px solid var(--brown);
+        }
+
+        .btn-light:hover {
+            background: var(--brown);
+            color: white;
+        }
+
+        .btn-large {
+            padding: 16px 42px;
+            font-size: 1rem;
+        }
+
+        /* ===== HERO - IMMERSIF, PHOTOGRAPHIE, SENSE OF PLACE ===== */
+        .hero {
+            padding: 80px 0 100px;
+            background: var(--sand);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(242,139,48,0.08);
+            color: var(--orange);
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            border: 1px solid rgba(242,139,48,0.2);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            color: var(--black);
+            font-family: var(--font-serif);
+            line-height: 1.1;
+        }
+
+        .hero h1 span {
+            color: var(--orange);
+            font-style: italic;
+        }
+
+        .hero p {
+            color: var(--grey-dark);
+            margin-bottom: 40px;
+            font-size: 1.2rem;
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 12px solid white;
+            transition: var(--transition);
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+
+        .hero-image:hover img {
+            transform: perspective(1000px) rotateY(0deg) scale(1.02);
+            border-color: var(--sand);
+        }
+
+        .hero-experience {
+            position: absolute;
+            bottom: -25px;
+            left: -25px;
+            background: white;
+            padding: 25px 35px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            border: var(--border);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border-left: 6px solid var(--orange);
+        }
+
+        .hero-experience i {
+            font-size: 2.2rem;
+            color: var(--orange);
+        }
+
+        .hero-experience span {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        .hero-search {
+            background: white;
+            padding: 30px 35px;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            margin-top: 45px;
+            display: inline-flex;
+            align-items: center;
+            gap: 20px;
+            border: var(--border);
+        }
+
+        .hero-search i {
+            color: var(--orange);
+            font-size: 1.3rem;
+        }
+
+        .hero-search span {
+            font-weight: 600;
+            color: var(--black);
+        }
+
+        /* ===== BARRE DE RECHERCHE DISCRÈTE ===== */
+        .booking-bar {
+            background: white;
+            border-radius: 100px;
+            padding: 10px;
+            box-shadow: var(--shadow);
+            margin-top: -30px;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 10;
+            border: var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .booking-item {
+            flex: 1;
+            padding: 8px 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-right: 1px solid var(--grey);
+        }
+
+        .booking-item:last-child {
+            border-right: none;
+        }
+
+        .booking-item i {
+            color: var(--orange);
+            font-size: 1.2rem;
+        }
+
+        .booking-content {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .booking-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--grey-dark);
+            font-weight: 600;
+        }
+
+        .booking-value {
+            font-weight: 700;
+            color: var(--black);
+            font-size: 0.95rem;
+        }
+
+        .booking-btn {
+            background: var(--orange);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .booking-btn:hover {
+            background: var(--brown);
+            transform: translateY(-2px);
+        }
+
+        /* ===== GRILLE D'HÉBERGEMENTS ===== */
+        .properties {
+            padding: 100px 0;
+        }
+
+        .properties-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .property-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: var(--border);
+            transition: var(--transition);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .property-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--orange);
+        }
+
+        .property-image {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .property-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .property-card:hover .property-image img {
+            transform: scale(1.08);
+        }
+
+        .property-tag {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--orange);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            z-index: 2;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .property-tag.boutique {
+            background: var(--brown);
+        }
+
+        .property-wishlist {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--grey-dark);
+            text-decoration: none;
+            transition: var(--transition);
+            z-index: 2;
+            box-shadow: var(--shadow-sm);
+            border: none;
+        }
+
+        .property-wishlist:hover {
+            background: var(--orange);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .property-content {
+            padding: 30px;
+        }
+
+        .property-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .property-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--black);
+            margin-bottom: 5px;
+        }
+
+        .property-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--grey-dark);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .property-location i {
+            color: var(--orange);
+        }
+
+        .property-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--sand);
+            padding: 8px 16px;
+            border-radius: 50px;
+        }
+
+        .property-rating i {
+            color: #FFB800;
+        }
+
+        .property-rating span {
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .property-desc {
+            color: var(--grey-dark);
+            margin-bottom: 25px;
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        .property-amenities {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 25px;
+        }
+
+        .amenity {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--grey-dark);
+            font-size: 0.85rem;
+        }
+
+        .amenity i {
+            color: var(--green);
+            font-size: 0.9rem;
+        }
+
+        .property-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: var(--border);
+        }
+
+        .property-price {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-from {
+            font-size: 0.8rem;
+            color: var(--grey-dark);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .price-amount {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--orange);
+            line-height: 1;
+        }
+
+        .price-period {
+            font-size: 0.8rem;
+            color: var(--grey-dark);
+        }
+
+        .property-link {
+            background: var(--sand);
+            color: var(--black);
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid var(--brown);
+        }
+
+        .property-link:hover {
+            background: var(--orange);
+            color: white;
+            border-color: var(--orange);
+        }
+
+        /* ===== GRILLE MAISONS D'HÔTES ===== */
+        .guesthouses {
+            background: var(--cream);
+            padding: 100px 0;
+        }
+
+        .guesthouses-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .guesthouse-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            border: var(--border);
+            display: flex;
+            transition: var(--transition);
+        }
+
+        .guesthouse-card:hover {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--orange);
+        }
+
+        .guesthouse-image {
+            width: 40%;
+            overflow: hidden;
+        }
+
+        .guesthouse-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .guesthouse-card:hover .guesthouse-image img {
+            transform: scale(1.1);
+        }
+
+        .guesthouse-content {
+            width: 60%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .guesthouse-type {
+            color: var(--orange);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .guesthouse-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .guesthouse-location {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--grey-dark);
+            font-size: 0.85rem;
+            margin-bottom: 15px;
+        }
+
+        .guesthouse-desc {
+            color: var(--grey-dark);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            flex: 1;
+        }
+
+        .guesthouse-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .guesthouse-price {
+            font-weight: 700;
+            color: var(--orange);
+            font-size: 1.2rem;
+        }
+
+        .guesthouse-link {
+            color: var(--brown);
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .guesthouse-link:hover {
+            color: var(--orange);
+            gap: 12px;
+        }
+
+        /* ===== CARACTÉRISTIQUES UNIQUES ===== */
+        .features {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 40px 25px;
+            border-radius: 16px;
+            background: var(--sand);
+            transition: var(--transition);
+            border: var(--border);
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            background: white;
+            border-color: var(--orange);
+            box-shadow: var(--shadow);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--orange);
+            border: var(--border);
+            transition: var(--transition);
+        }
+
+        .feature-item:hover .feature-icon {
+            background: var(--orange);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .feature-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .feature-text {
+            color: var(--grey-dark);
+            font-size: 0.9rem;
+        }
+
+        /* ===== CHAMBRES & SUITES ===== */
+        .rooms {
+            background: var(--sand);
+            padding: 100px 0;
+        }
+
+        .rooms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .room-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: var(--border);
+        }
+
+        .room-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            border-color: var(--orange);
+        }
+
+        .room-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .room-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .room-card:hover .room-image img {
+            transform: scale(1.08);
+        }
+
+        .room-overlay {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--orange);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .room-content {
+            padding: 30px;
+        }
+
+        .room-title {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .room-desc {
+            color: var(--grey-dark);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+
+        .room-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: var(--border);
+        }
+
+        .room-feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--grey-dark);
+            font-size: 0.85rem;
+        }
+
+        .room-feature i {
+            color: var(--green);
+        }
+
+        .room-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .room-price {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--orange);
+        }
+
+        .room-price small {
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: var(--grey-dark);
+            font-family: var(--font-sans);
+        }
+
+        .room-book {
+            background: var(--sand);
+            color: var(--black);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 1px solid var(--brown);
+        }
+
+        .room-book:hover {
+            background: var(--orange);
+            color: white;
+            border-color: var(--orange);
+        }
+
+        /* ===== EXPÉRIENCES & ACTIVITÉS ===== */
+        .experiences {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .experiences-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+            align-items: center;
+        }
+
+        .experience-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--black);
+        }
+
+        .experience-list {
+            list-style: none;
+            margin: 30px 0;
+        }
+
+        .experience-list li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: var(--grey-dark);
+            font-size: 1.05rem;
+        }
+
+        .experience-list i {
+            color: var(--orange);
+            font-size: 1.2rem;
+            width: 30px;
+            text-align: center;
+        }
+
+        .experience-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 12px solid white;
+        }
+
+        .local-guide {
+            background: var(--sand);
+            padding: 30px;
+            border-radius: 20px;
+            margin-top: 40px;
+            border-left: 6px solid var(--orange);
+        }
+
+        .local-guide h4 {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .local-guide p {
+            color: var(--grey-dark);
+            margin-bottom: 15px;
+        }
+
+        .local-guide a {
+            color: var(--orange);
+            font-weight: 700;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* ===== RESTAURATION & BIEN-ÊTRE ===== */
+        .dining {
+            background: linear-gradient(145deg, var(--cream), white);
+            padding: 100px 0;
+        }
+
+        .dining-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .dining-image {
+            position: relative;
+        }
+
+        .dining-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+            border: 12px solid white;
+        }
+
+        .dining-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--orange);
+            color: white;
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            border: 6px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        .dining-badge span {
+            display: block;
+            font-size: 2rem;
+            font-weight: 700;
+            font-family: var(--font-serif);
+            line-height: 1;
+        }
+
+        .dining-content h3 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .dining-menu {
+            margin-top: 30px;
+        }
+
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px dashed var(--brown);
+        }
+
+        .menu-item:last-child {
+            border-bottom: none;
+        }
+
+        .menu-name {
+            font-weight: 700;
+            color: var(--black);
+        }
+
+        .menu-price {
+            color: var(--orange);
+            font-weight: 700;
+        }
+
+        /* ===== GALLERIE IMMERSIVE ===== */
+        .gallery {
+            padding: 100px 0;
+            background: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(44,40,36,0.9), transparent);
+            padding: 25px;
+            color: white;
+            opacity: 0;
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-end;
+            height: 100%;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-caption {
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            transform: translateY(20px);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover .gallery-caption {
+            transform: translateY(0);
+        }
+
+        .gallery-btn {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        /* ===== TÉMOIGNAGES AUTHENTIQUES ===== */
+        .testimonials {
+            background: var(--cream);
+            padding: 100px 0;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            border: var(--border);
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .testimonial-card:hover {
+            box-shadow: var(--shadow);
+            border-color: var(--orange);
+        }
+
+        .testimonial-quote {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 6rem;
+            color: var(--orange);
+            opacity: 0.1;
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--sand);
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h4 {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--black);
+        }
+
+        .testimonial-info span {
+            color: var(--orange);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .testimonial-text {
+            color: var(--grey-dark);
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-style: italic;
+        }
+
+        .testimonial-rating {
+            color: #FFB800;
+            font-size: 1rem;
+            letter-spacing: 4px;
+        }
+
+        /* ===== RÉSERVATION DIRECTE ===== */
+        .direct-booking {
+            background: linear-gradient(145deg, var(--brown), #6B5A4A);
+            padding: 100px 0;
+            color: white;
+        }
+
+        .direct-booking .container {
+            text-align: center;
+        }
+
+        .direct-booking h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        .direct-booking p {
+            color: rgba(255,255,255,0.9);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .booking-features {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 60px;
+        }
+
+        .booking-feature {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: white;
+        }
+
+        .booking-feature i {
+            font-size: 1.8rem;
+            color: var(--orange);
+        }
+
+        .booking-feature span {
+            font-weight: 600;
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--brown);
+            padding: 18px 50px;
+            font-size: 1.1rem;
+        }
+
+        .btn-white:hover {
+            background: var(--orange);
+            color: white;
+        }
+
+        /* ===== NEWSLETTER CHARME ===== */
+        .newsletter {
+            background: var(--sand);
+            border-radius: 30px;
+            padding: 70px;
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .newsletter h3 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--black);
+        }
+
+        .newsletter p {
+            color: var(--grey-dark);
+            margin-bottom: 35px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .newsletter-form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            gap: 15px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 18px 28px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            border: var(--border);
+            background: white;
+        }
+
+        .newsletter-form input:focus {
+            outline: none;
+            border-color: var(--orange);
+        }
+
+        .newsletter-form button {
+            background: var(--orange);
+            color: white;
+            padding: 18px 35px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .newsletter-form button:hover {
+            background: var(--brown);
+        }
+
+        /* ===== FOOTER ÉLÉGANT ===== */
+        .footer {
+            background: var(--black);
+            color: white;
+            padding: 100px 0 50px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: 60px;
+            margin-bottom: 70px;
+        }
+
+        .footer-logo .logo-icon {
+            background: white;
+            color: var(--orange);
+        }
+
+        .footer-logo .logo-main {
+            color: white;
+        }
+
+        .footer-logo .logo-sub {
+            color: rgba(255,255,255,0.7);
+        }
+
+        .footer-description {
+            color: rgba(255,255,255,0.7);
+            margin: 25px 0;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            font-family: var(--font-serif);
+            border-bottom: 2px solid var(--orange);
+            padding-bottom: 12px;
+            display: inline-block;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+
+        .footer-links a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: var(--transition);
+            font-size: 0.95rem;
+        }
+
+        .footer-links a:hover {
+            color: var(--orange);
+            padding-left: 8px;
+        }
+
+        .footer-contact {
+            list-style: none;
+        }
+
+        .footer-contact li {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+        }
+
+        .footer-contact i {
+            color: var(--orange);
+            margin-top: 5px;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .footer-social a {
+            width: 48px;
+            height: 48px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .footer-social a:hover {
+            background: var(--orange);
+            transform: translateY(-5px);
+            border-color: transparent;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 50px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .copyright {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.9rem;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 40px;
+        }
+
+        .footer-legal a {
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: var(--transition);
+        }
+
+        .footer-legal a:hover {
+            color: var(--orange);
+        }
+
+        /* ===== BACK TO TOP ===== */
+        .back-to-top {
+            position: fixed;
+            bottom: 50px;
+            right: 50px;
+            width: 60px;
+            height: 60px;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid white;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--brown);
+            transform: translateY(-10px) scale(1.1);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 1200px) {
+            .properties-grid,
+            .rooms-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .guesthouses-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 992px) {
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
+            
+            .hero .container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-image {
+                order: -1;
+            }
+            
+            .experiences-grid,
+            .dining-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .booking-bar {
+                flex-direction: column;
+                border-radius: 20px;
+            }
+            
+            .booking-item {
+                width: 100%;
+                border-right: none;
+                border-bottom: 1px solid var(--grey);
+            }
+            
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+            
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            
+            .top-bar .container {
+                flex-direction: column;
+                gap: 15px;
+                text-align: center;
+            }
+            
+            .top-info {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 80%;
+                height: 100vh;
+                flex-direction: column;
+                background: white;
+                padding: 120px 40px;
+                transition: 0.3s;
+                z-index: 999;
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .menu-toggle {
+                display: block;
+                z-index: 1001;
+            }
+            
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+            
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(8px, -8px);
+            }
+            
+            .nav-actions {
+                display: none;
+            }
+            
+            .properties-grid,
+            .rooms-grid,
+            .features-grid,
+            .guesthouses-grid,
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .guesthouse-card {
+                flex-direction: column;
+            }
+            
+            .guesthouse-image,
+            .guesthouse-content {
+                width: 100%;
+            }
+            
+            .guesthouse-image {
+                height: 200px;
+            }
+            
+            .booking-features {
+                flex-direction: column;
+                gap: 25px;
+                align-items: flex-start;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 25px;
+                text-align: center;
+            }
+            
+            .footer-legal {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .newsletter {
+                padding: 50px 30px;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            
+            .hero-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .hero-experience {
+                position: static;
+                margin-top: 30px;
+            }
+            
+            .hero-search {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .room-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 15px;
+            }
+            
+            .room-book {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .property-footer {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
+            }
+            
+            .property-link {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip link -->
+    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
+
+    <!-- Top Bar - Hospitalité & Accueil -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-info">
+                <span><i class="fas fa-phone-alt"></i> +225 07 08 43 21 72</span>
+                <span><i class="fas fa-envelope"></i> reservation@collection-hh.com</span>
+                <span><i class="fas fa-map-marker-alt"></i> 12 hébergements de charme</span>
+            </div>
+            <div class="top-guest">
+                <i class="fas fa-crown"></i> Cercle Voyageurs • -10% sur réservation directe
+            </div>
+            <div class="top-lang">
+                <a href="#" class="active">FR</a>
+                <a href="#">EN</a>
+                <a href="#">ES</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <a href="#accueil" class="logo">
+                <div class="logo-icon">🏨</div>
+                <div class="logo-text">
+                    <span class="logo-main">H&H</span>
+                    <span class="logo-sub">COLLECTION</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li><a href="#accueil" class="active">Accueil</a></li>
+                <li><a href="#hotels">Hôtels</a></li>
+                <li><a href="#maisons">Maisons d’hôtes</a></li>
+                <li><a href="#chambres">Chambres & Suites</a></li>
+                <li><a href="#experiences">Expériences</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <a href="#reservation" class="btn-reserve">
+                    <i class="fas fa-calendar-check"></i> Réserver
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- ===== HERO SECTION - IMMERSIF, SENSE OF PLACE ===== -->
+        <!-- Inspiré des meilleures pratiques : Elepath Lodge, The Hoxton, Ace Hotel [citation:1][citation:3] -->
+        <section id="accueil" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <i class="fas fa-asterisk"></i> COLLECTION H&H • HÔTELS BOUTIQUE & MAISONS D’HÔTES
+                    </div>
+                    <h1>
+                        L’art de <span>l’hospitalité</span><br>
+                        authentique
+                    </h1>
+                    <p>Douze hébergements d’exception, chacun racontant une histoire unique. Du lodge niché en pleine nature à la maison d’hôtes de charme en cœur de ville. Réservation directe, sans commission.</p>
+                    <div class="hero-buttons">
+                        <a href="#hotels" class="btn btn-primary btn-large">
+                            <i class="fas fa-building"></i> Découvrir nos hôtels
+                        </a>
+                        <a href="#maisons" class="btn btn-outline btn-large">
+                            <i class="fas fa-home"></i> Maisons d’hôtes
+                        </a>
+                    </div>
+                    
+                    <!-- Élément d'expérience client - storytelling [citation:6] -->
+                    <div class="hero-experience">
+                        <i class="fas fa-star"></i>
+                        <span>Authenticité • Personnalisation • Rituels d’accueil</span>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Hôtel boutique de charme - piscine et coucher de soleil">
+                </div>
+            </div>
+            
+            <!-- Booking bar - inspiré The Hoxton, Ace Hotel [citation:1] -->
+            <div class="container" style="margin-top: 50px;">
+                <div class="booking-bar">
+                    <div class="booking-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="booking-content">
+                            <span class="booking-label">Arrivée</span>
+                            <span class="booking-value">12 oct. 2026</span>
+                        </div>
+                    </div>
+                    <div class="booking-item">
+                        <i class="fas fa-calendar-alt"></i>
+                        <div class="booking-content">
+                            <span class="booking-label">Départ</span>
+                            <span class="booking-value">15 oct. 2026</span>
+                        </div>
+                    </div>
+                    <div class="booking-item">
+                        <i class="fas fa-user"></i>
+                        <div class="booking-content">
+                            <span class="booking-label">Voyageurs</span>
+                            <span class="booking-value">2 adultes</span>
+                        </div>
+                    </div>
+                    <a href="#reservation" class="booking-btn">
+                        <i class="fas fa-search"></i> Rechercher
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== HÔTELS BOUTIQUE ===== -->
+        <!-- Exemples inspirants : The Hoxton, The LINE Hotels, Ace Hotel, Lungarno Collection [citation:1] -->
+        <section id="hotels" class="properties">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">HÔTELS BOUTIQUE</span>
+                    <h2 class="section-title">Design, <span>caractère</span> & art de vivre</h2>
+                    <p style="color: var(--grey-dark); max-width: 700px; margin-top: 25px; font-size: 1.1rem;">Des établissements indépendants où chaque détail raconte une histoire. Photographie immersive, typographie élégante, réservation directe intégrée.</p>
+                </div>
+                
+                <div class="properties-grid">
+                    <!-- The Hoxton inspired - Urban & casual luxury [citation:1] -->
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="The Hoxton - Hôtel boutique urbain">
+                            <span class="property-tag">URBAIN · LUXE DÉCONTRACTÉ</span>
+                            <a href="#" class="property-wishlist"><i class="far fa-heart"></i></a>
+                        </div>
+                        <div class="property-content">
+                            <div class="property-header">
+                                <div>
+                                    <h3 class="property-title">The Hoxton</h3>
+                                    <div class="property-location">
+                                        <i class="fas fa-map-marker-alt"></i> Paris · 9e
+                                    </div>
+                                </div>
+                                <div class="property-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.5</span>
+                                </div>
+                            </div>
+                            <p class="property-desc">Open-house hôtel enraciné dans la culture du quartier. Design épuré, lumière naturelle, espace de coworking et HoxShop — notre boutique d’accessoires signature.</p>
+                            <div class="property-amenities">
+                                <span class="amenity"><i class="fas fa-wifi"></i> WiFi haut débit</span>
+                                <span class="amenity"><i class="fas fa-dumbbell"></i> Fitness</span>
+                                <span class="amenity"><i class="fas fa-store"></i> HoxShop</span>
+                            </div>
+                            <div class="property-footer">
+                                <div class="property-price">
+                                    <span class="price-from">À partir de</span>
+                                    <span class="price-amount">190€</span>
+                                    <span class="price-period">/nuit</span>
+                                </div>
+                                <a href="#" class="property-link">Réserver</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- The LINE Hotels - Contemporary & lifestyle-focused [citation:1] -->
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="The LINE Hotels - Lifestyle hotel">
+                            <span class="property-tag">LIFESTYLE · MUSIQUE</span>
+                            <a href="#" class="property-wishlist"><i class="far fa-heart"></i></a>
+                        </div>
+                        <div class="property-content">
+                            <div class="property-header">
+                                <div>
+                                    <h3 class="property-title">The LINE</h3>
+                                    <div class="property-location">
+                                        <i class="fas fa-map-marker-alt"></i> Lyon · Confluence
+                                    </div>
+                                </div>
+                                <div class="property-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.3</span>
+                                </div>
+                            </div>
+                            <p class="property-desc">Hôtel contemporain où la musique et l’art urbain sont rois. Chambres au design brut élégant, roof-top avec vue panoramique et programmation culturelle hebdomadaire.</p>
+                            <div class="property-amenities">
+                                <span class="amenity"><i class="fas fa-headphones"></i> Studio d’enregistrement</span>
+                                <span class="amenity"><i class="fas fa-cocktail"></i> Roof-top bar</span>
+                                <span class="amenity"><i class="fas fa-paint-brush"></i> Galerie</span>
+                            </div>
+                            <div class="property-footer">
+                                <div class="property-price">
+                                    <span class="price-from">À partir de</span>
+                                    <span class="price-amount">165€</span>
+                                    <span class="price-period">/nuit</span>
+                                </div>
+                                <a href="#" class="property-link">Réserver</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Ace Hotel - Artsy & minimalist [citation:1] -->
+                    <div class="property-card">
+                        <div class="property-image">
+                            <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Ace Hotel - Artsy">
+                            <span class="property-tag">ART · MINIMALISTE</span>
+                            <a href="#" class="property-wishlist"><i class="far fa-heart"></i></a>
+                        </div>
+                        <div class="property-content">
+                            <div class="property-header">
+                                <div>
+                                    <h3 class="property-title">Ace Hotel</h3>
+                                    <div class="property-location">
+                                        <i class="fas fa-map-marker-alt"></i> Bordeaux · Chartrons
+                                    </div>
+                                </div>
+                                <div class="property-rating">
+                                    <i class="fas fa-star"></i>
+                                    <span>4.6</span>
+                                </div>
+                            </div>
+                            <p class="property-desc">Hôtel de collectionneurs. Mobilier vintage, bibliothèque partagée, galerie éphémère. Une expérience immersive au cœur du quartier des antiquaires.</p>
+                            <div class="property-amenities">
+                                <span class="amenity"><i class="fas fa-book"></i> Library</span>
+                                <span class="amenity"><i class="fas fa-bicycle"></i> Vélos gratuits</span>
+                                <span class="amenity"><i class="fas fa-camera"></i> Chambre noire</span>
+                            </div>
+                            <div class="property-footer">
+                                <div class="property-price">
+                                    <span class="price-from">À partir de</span>
+                                    <span class="price-amount">210€</span>
+                                    <span class="price-period">/nuit</span>
+                                </div>
+                                <a href="#" class="property-link">Réserver</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 60px;">
+                    <a href="#" class="btn btn-outline btn-large">Découvrir tous nos hôtels <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== MAISONS D’HÔTES & BED & BREAKFAST ===== -->
+        <!-- Inspiré des meilleurs exemples B&B : Maplecroft, Westbrook Inn, Raise View, Antlers On The Creek [citation:6] -->
+        <section id="maisons" class="guesthouses">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">MAISONS D’HÔTES & BED & BREAKFAST</span>
+                    <h2 class="section-title">L’âme des <span>lieux</span></h2>
+                    <p style="color: var(--grey-dark); max-width: 700px; margin-top: 25px; font-size: 1.1rem;">Cinq adresses où l’on vient pour l’accueil, le petit-déjeuner maison et l’art de recevoir.</p>
+                </div>
+                
+                <div class="guesthouses-grid">
+                    <!-- Maplecroft style - Victorian charm [citation:6] -->
+                    <div class="guesthouse-card">
+                        <div class="guesthouse-image">
+                            <img src="https://images.unsplash.com/photo-1560184897-ae75f418493e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Maison d’hôtes charme victorien">
+                        </div>
+                        <div class="guesthouse-content">
+                            <span class="guesthouse-type">MAISON D’HÔTES • CHARME VICTORIEN</span>
+                            <h3 class="guesthouse-title">Maplecroft</h3>
+                            <div class="guesthouse-location">
+                                <i class="fas fa-map-marker-alt"></i> Annecy · Vieille ville
+                            </div>
+                            <p class="guesthouse-desc">Maison de maître du XIXe siècle, cinq chambres au cachet préservé. Petit-déjeuner avec confitures maison, terrasse ombragée et vues sur le lac.</p>
+                            <div class="guesthouse-footer">
+                                <span class="guesthouse-price">À partir de 120€</span>
+                                <a href="#" class="guesthouse-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Westbrook Inn style - wedding venue [citation:6] -->
+                    <div class="guesthouse-card">
+                        <div class="guesthouse-image">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Maison d’hôtes avec jardin">
+                        </div>
+                        <div class="guesthouse-content">
+                            <span class="guesthouse-type">MAISON D’HÔTES • JARDIN & ÉVÉNEMENTS</span>
+                            <h3 class="guesthouse-title">Westbrook Inn</h3>
+                            <div class="guesthouse-location">
+                                <i class="fas fa-map-marker-alt"></i> Honfleur · Calvados
+                            </div>
+                            <p class="guesthouse-desc">Charmante maison normande au cœur des jardins. Cinq chambres d’hôtes, salle de réception pour mariages intimistes et table d’hôtes réputée.</p>
+                            <div class="guesthouse-footer">
+                                <span class="guesthouse-price">À partir de 145€</span>
+                                <a href="#" class="guesthouse-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Raise View style - minimalist lakeside [citation:6] -->
+                    <div class="guesthouse-card">
+                        <div class="guesthouse-image">
+                            <img src="https://images.unsplash.com/photo-1598228723793-527ee9fdf213?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Bed and breakfast bord de lac">
+                        </div>
+                        <div class="guesthouse-content">
+                            <span class="guesthouse-type">B&B • BORD DE LAC</span>
+                            <h3 class="guesthouse-title">Raise View</h3>
+                            <div class="guesthouse-location">
+                                <i class="fas fa-map-marker-alt"></i> Lac d’Annecy · Talloires
+                            </div>
+                            <p class="guesthouse-desc">Minimalisme scandinave au bord de l’eau. Cinq chambres avec vue lac, petit-déjeuner bio, accès direct à la plage. Idéal pour les amateurs de randonnée.</p>
+                            <div class="guesthouse-footer">
+                                <span class="guesthouse-price">À partir de 135€</span>
+                                <a href="#" class="guesthouse-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- The Vine House style - wine country elegance [citation:6] -->
+                    <div class="guesthouse-card">
+                        <div class="guesthouse-image">
+                            <img src="https://images.unsplash.com/photo-1587061949409-02df2d5e6dd1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Bed and breakfast vignoble">
+                        </div>
+                        <div class="guesthouse-content">
+                            <span class="guesthouse-type">B&B • VIGNOBLE</span>
+                            <h3 class="guesthouse-title">The Vine House</h3>
+                            <div class="guesthouse-location">
+                                <i class="fas fa-map-marker-alt"></i> Saint-Émilion
+                            </div>
+                            <p class="guesthouse-desc">Maison de maître au cœur du vignoble. Six chambres élégantes, dégustation privée, piscine chauffée et accès direct aux grands crus classés.</p>
+                            <div class="guesthouse-footer">
+                                <span class="guesthouse-price">À partir de 185€</span>
+                                <a href="#" class="guesthouse-link">Découvrir <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 60px;">
+                    <a href="#" class="btn btn-outline btn-large">Voir toutes nos maisons d’hôtes <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CARACTÉRISTIQUES CLÉS ===== -->
+        <!-- D'après les critères essentiels : réservation directe, photographie, storytelling, accueil personnalisé [citation:1][citation:6] -->
+        <section class="features">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">L’ART DE L’HOSPITALITÉ</span>
+                    <h2 class="section-title">Ce qui fait notre <span>différence</span></h2>
+                </div>
+                
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-camera-retro"></i>
+                        </div>
+                        <h3 class="feature-title">Photographie immersive</h3>
+                        <p class="feature-text">Chaque établissement est mis en lumière par des reportages photo sur mesure. Sense of place, émotion, désir d’évasion.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3 class="feature-title">Réservation directe</h3>
+                        <p class="feature-text">Sans commission, sans intermédiaire. Le meilleur tarif garanti, des avantages exclusifs et une relation directe avec l’hôte.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-feather-alt"></i>
+                        </div>
+                        <h3 class="feature-title">Storytelling</h3>
+                        <p class="feature-text">Chaque maison d’hôtes, chaque hôtel a une histoire. Nous la racontons à travers des textes authentiques et une direction artistique singulière.</p>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-concierge-bell"></i>
+                        </div>
+                        <h3 class="feature-title">Rituels d’accueil</h3>
+                        <p class="feature-text">Thé ou café offert à l’arrivée, conciergerie locale, recommandations personnalisées. L’hospitalité comme un art.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CHAMBRES & SUITES ===== -->
+        <!-- Présentation détaillée des hébergements [citation:2][citation:6] -->
+        <section id="chambres" class="rooms">
+            <div class="container">
+                <div class="section-header" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">CHAMBRES & SUITES</span>
+                    <h2 class="section-title">Des espaces pensés pour <span>vous</span></h2>
+                    <p style="color: var(--grey-dark); max-width: 700px; margin-top: 25px; font-size: 1.1rem;">Chambres spacieuses, literie haut de gamme, salles de bain privatives et équipements modernes dans un écrin de caractère.</p>
+                </div>
+                
+                <div class="rooms-grid">
+                    <div class="room-card">
+                        <div class="room-image">
+                            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Suite Deluxe">
+                            <span class="room-overlay">COUP DE CŒUR</span>
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">Suite Deluxe</h3>
+                            <p class="room-desc">45m², chambre séparée, salon privatif, terrasse avec vue panoramique. Literie en plumon d’oie et linge de maison 100% lin.</p>
+                            <div class="room-features">
+                                <span class="room-feature"><i class="fas fa-wifi"></i> WiFi</span>
+                                <span class="room-feature"><i class="fas fa-tv"></i> 4K OLED</span>
+                                <span class="room-feature"><i class="fas fa-coffee"></i> Nespresso</span>
+                                <span class="room-feature"><i class="fas fa-bath"></i> Baignoire balnéo</span>
+                            </div>
+                            <div class="room-footer">
+                                <div class="room-price">290€ <small>/nuit</small></div>
+                                <a href="#" class="room-book">Réserver</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <div class="room-image">
+                            <img src="https://images.unsplash.com/photo-1598928506911-5c200b0e3cc2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Chambre Supérieure">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">Chambre Supérieure</h3>
+                            <p class="room-desc">28m², design épuré, parquet massif, salle d’eau en marbre de Carrare. Idéale pour une escapade en amoureux.</p>
+                            <div class="room-features">
+                                <span class="room-feature"><i class="fas fa-wifi"></i> WiFi</span>
+                                <span class="room-feature"><i class="fas fa-tv"></i> Écran HD</span>
+                                <span class="room-feature"><i class="fas fa-wind"></i> Climatisation</span>
+                                <span class="room-feature"><i class="fas fa-glass-cheers"></i> Mini-bar</span>
+                            </div>
+                            <div class="room-footer">
+                                <div class="room-price">165€ <small>/nuit</small></div>
+                                <a href="#" class="room-book">Réserver</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="room-card">
+                        <div class="room-image">
+                            <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1474&q=80" alt="Chambre Confort">
+                        </div>
+                        <div class="room-content">
+                            <h3 class="room-title">Chambre Confort</h3>
+                            <p class="room-desc">18m², cocooning, douche à l’italienne, vue sur jardin intérieur. Tout le confort nécessaire pour une nuit sereine.</p>
+                            <div class="room-features">
+                                <span class="room-feature"><i class="fas fa-wifi"></i> WiFi</span>
+                                <span class="room-feature"><i class="fas fa-tv"></i> Écran plat</span>
+                                <span class="room-feature"><i class="fas fa-coffee"></i> Cafetière</span>
+                                <span class="room-feature"><i class="fas fa-snowflake"></i> Climatisation</span>
+                            </div>
+                            <div class="room-footer">
+                                <div class="room-price">115€ <small>/nuit</small></div>
+                                <a href="#" class="room-book">Réserver</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPÉRIENCES LOCALES ===== -->
+        <!-- Contenu éditorial, recommandations, activités [citation:1][citation:6] -->
+        <section id="experiences" class="experiences">
+            <div class="container">
+                <div class="experiences-grid">
+                    <div class="experience-content">
+                        <span class="section-subtitle">VIVRE LA DESTINATION</span>
+                        <h3>Au-delà de la <span>chambre</span></h3>
+                        <p style="color: var(--grey-dark); margin-bottom: 30px; font-size: 1.1rem;">Séjourner dans nos établissements, c’est aussi découvrir une région, ses artisans, ses producteurs et ses paysages.</p>
+                        <ul class="experience-list">
+                            <li><i class="fas fa-wine-glass-alt"></i> Dégustation privée dans les vignobles de Saint-Émilion</li>
+                            <li><i class="fas fa-hiking"></i> Randonnée guidée dans le massif des Bauges</li>
+                            <li><i class="fas fa-paint-brush"></i> Atelier de poterie avec un artisan local</li>
+                            <li><i class="fas fa-ship"></i> Croisière sur le lac d’Annecy</li>
+                        </ul>
+                        <div class="local-guide">
+                            <h4>Notre carnet d’adresses</h4>
+                            <p>Restaurants, marchés, librairies indépendantes — notre conciergerie locale vous partage ses meilleures adresses.</p>
+                            <a href="#">Télécharger le carnet <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="experience-image">
+                        <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Expériences locales - lac et montagne">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RESTAURATION & BIEN-ÊTRE ===== -->
+        <section class="dining">
+            <div class="container">
+                <div class="dining-grid">
+                    <div class="dining-image">
+                        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Table d’hôtes et gastronomie">
+                        <div class="dining-badge">
+                            <span>90%</span>
+                            Produits locaux
+                        </div>
+                    </div>
+                    <div class="dining-content">
+                        <span class="section-subtitle">TABLE D’HÔTES & BIEN-ÊTRE</span>
+                        <h3>L’art de la <span>table</span></h3>
+                        <p style="color: var(--grey-dark); margin-bottom: 25px;">Notre engagement : une cuisine de marché, majoritairement bio et sourcée à moins de 50 kilomètres. Menus dégustation sur réservation.</p>
+                        <div class="dining-menu">
+                            <div class="menu-item">
+                                <span class="menu-name">Petit-déjeuner maison</span>
+                                <span class="menu-price">Inclus</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-name">Menu du soir (4 services)</span>
+                                <span class="menu-price">52€</span>
+                            </div>
+                            <div class="menu-item">
+                                <span class="menu-name">Carte des vins nature</span>
+                                <span class="menu-price">À partir 28€</span>
+                            </div>
+                        </div>
+                        <a href="#" style="display: inline-block; margin-top: 30px; color: var(--orange); font-weight: 700; text-decoration: none;">Découvrir nos tables <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== GALERIE IMMERSIVE ===== -->
+        <!-- Recommandé pour transmettre l’atmosphère [citation:1][citation:3][citation:6] -->
+        <section class="gallery">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">GALERIE</span>
+                    <h2 class="section-title">L’esprit des <span>lieux</span></h2>
+                    <p style="color: var(--grey-dark); max-width: 700px; margin-top: 25px;">Une immersion visuelle dans nos établissements.</p>
+                </div>
+                
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Hôtel boutique réception">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Accueil & lobby</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Piscine hôtel">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Piscine & spa</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1596394516093-501ba68a0ba6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Chambre design">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Chambre Deluxe</span>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Terrasse vue mer">
+                        <div class="gallery-overlay">
+                            <span class="gallery-caption">Terrasse & vue</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="gallery-btn">
+                    <a href="#" class="btn btn-outline">Voir la galerie complète</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== TÉMOIGNAGES ===== -->
+        <!-- Avis clients - élément de confiance majeur [citation:6] -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">TÉMOIGNAGES</span>
+                    <h2 class="section-title">L’expérience <span>H&H</span></h2>
+                </div>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Client">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Laurent D.</h4>
+                                <span>SÉJOUR À THE HOXTON</span>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"L’emplacement est idéal, le design épuré et le personnel aux petits soins. Le concept HoxShop est génial, j’ai craqué pour la bougie signature. Réservation directe simple et rapide."</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80" alt="Cliente">
+                            </div>
+                            <div class="testimonial-info">
+                                <h4>Sophie M.</h4>
+                                <span>MAISON D’HÔTES MAPLECROFT</span>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Un week-end parfait dans cette maison d’hôtes pleine de charme. L’accueil est chaleureux, le petit-déjeuner délicieux avec les confitures maison. Nous reviendrons au printemps."</p>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== RÉSERVATION DIRECTE ===== -->
+        <!-- Argument clé : meilleur tarif, sans commission, avantages exclusifs [citation:1][citation:6] -->
+        <section id="reservation" class="direct-booking">
+            <div class="container">
+                <h2>Réservez en direct</h2>
+                <p>Meilleur tarif garanti • Petit-déjeuner offert • Accès au Cercle Voyageurs • Annulation flexible</p>
+                <a href="#" class="btn btn-white btn-large">Voir les disponibilités</a>
+                <div class="booking-features">
+                    <div class="booking-feature">
+                        <i class="fas fa-euro-sign"></i>
+                        <span>Meilleur prix garanti</span>
+                    </div>
+                    <div class="booking-feature">
+                        <i class="fas fa-gift"></i>
+                        <span>Avantages exclusifs</span>
+                    </div>
+                    <div class="booking-feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Annulation 48h</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== NEWSLETTER ===== -->
+        <div class="container">
+            <div class="newsletter">
+                <h3>Recevez notre lettre d’inspiration</h3>
+                <p>Nouveautés, offres exclusives, carnets de route — une fois par mois dans votre boîte mail.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Votre adresse email" required>
+                    <button type="submit">S’inscrire</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- ===== CONTACT & RÉSERVATION ===== -->
+        <section id="contact" class="properties" style="background: var(--cream);">
+            <div class="container">
+                <div class="section-header text-center" style="margin-bottom: 60px;">
+                    <span class="section-subtitle">CONTACT & RÉSERVATION</span>
+                    <h2 class="section-title">Une question ? <span>Nous sommes à votre écoute</span></h2>
+                </div>
+                
+                <div style="max-width: 800px; margin: 0 auto; background: white; padding: 60px; border-radius: 30px; box-shadow: var(--shadow); border: var(--border);">
+                    <form id="contactForm">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
+                            <div>
+                                <label for="firstname" style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--black);">Prénom *</label>
+                                <input type="text" id="firstname" style="width: 100%; padding: 16px; border: var(--border); border-radius: 12px; background: var(--sand);" required>
+                            </div>
+                            <div>
+                                <label for="lastname" style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--black);">Nom *</label>
+                                <input type="text" id="lastname" style="width: 100%; padding: 16px; border: var(--border); border-radius: 12px; background: var(--sand);" required>
+                            </div>
+                        </div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-bottom: 25px;">
+                            <div>
+                                <label for="email" style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--black);">Email *</label>
+                                <input type="email" id="email" style="width: 100%; padding: 16px; border: var(--border); border-radius: 12px; background: var(--sand);" required>
+                            </div>
+                            <div>
+                                <label for="phone" style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--black);">Téléphone</label>
+                                <input type="tel" id="phone" style="width: 100%; padding: 16px; border: var(--border); border-radius: 12px; background: var(--sand);">
+                            </div>
+                        </div>
+                        
+                        <div style="margin-bottom: 25px;">
+                            <label for="property" style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--black);">Établissement souhaité *</label>
+                            <select id="property" style="width: 100%; padding: 16px; border: var(--border); border-radius: 12px; background: var(--sand);" required>
+                                <option value="">Sélectionnez un hébergement</option>
+                                <option value="hoxton">The Hoxton - Paris</option>
+                                <option value="line">The LINE - Lyon</option>
+                                <option value="ace">Ace Hotel - Bordeaux</option>
+                                <option value="maplecroft">Maplecroft - Annecy</option>
+                                <option value="westbrook">Westbrook Inn - Honfleur</option>
+                                <option value="raise">Raise View - Talloires</option>
+                                <option value="vine">The Vine House - Saint-Émilion</option>
+                            </select>
+                        </div>
+                        
+                        <div style="margin-bottom: 35px;">
+                            <label for="message" style="display: block; margin-bottom: 10px; font-weight: 600; color: var(--black);">Message / Demande spécifique</label>
+                            <textarea id="message" rows="4" style="width: 100%; padding: 16px; border: var(--border); border-radius: 12px; background: var(--sand);" placeholder="Dates souhaitées, nombre de voyageurs, demandes particulières..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> ENVOYER MA DEMANDE
+                        </button>
+                        
+                        <p style="text-align: center; margin-top: 25px; color: var(--grey-dark); font-size: 0.9rem;">
+                            Réponse sous 2 heures ouvrées • Réservation directe sans commission
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <div class="logo-icon">🏨</div>
+                        <div class="logo-text">
+                            <span class="logo-main">H&H</span>
+                            <span class="logo-sub">COLLECTION</span>
+                        </div>
+                    </div>
+                    <p class="footer-description">
+                        Collection d’hôtels boutiques et maisons d’hôtes d’exception. Douze établissements, douze histoires, une même exigence : l’art de l’hospitalité authentique.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-pinterest"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>HÔTELS</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">The Hoxton - Paris</a></li>
+                        <li><a href="#">The LINE - Lyon</a></li>
+                        <li><a href="#">Ace Hotel - Bordeaux</a></li>
+                        <li><a href="#">21c Museum - Marseille</a></li>
+                        <li><a href="#">Lungarno - Nice</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>MAISONS D’HÔTES</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Maplecroft - Annecy</a></li>
+                        <li><a href="#">Westbrook Inn - Honfleur</a></li>
+                        <li><a href="#">Raise View - Talloires</a></li>
+                        <li><a href="#">The Vine House - Saint-Émilion</a></li>
+                        <li><a href="#">Antlers - Chamonix</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>CONTACT</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 15 rue de la Michodière, 75002 Paris</li>
+                        <li><i class="fas fa-phone-alt"></i> +225 07 08 43 21 72</li>
+                        <li><i class="fas fa-envelope"></i> reservation@collection-hh.com</li>
+                        <li><i class="fas fa-clock"></i> Assistance 7j/7 • 8h-22h</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">© 2026 COLLECTION H&H - Hôtels & Maisons d’hôtes. Réservation directe, sans commission.</p>
+                <div class="footer-legal">
+                    <a href="#">Mentions légales</a>
+                    <a href="#">CGV</a>
+                    <a href="#">Politique de confidentialité</a>
+                    <a href="#">Plan du site</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // Navigation mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+        }
+
+        // Fermer le menu au clic sur un lien
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+                backToTop.classList.add('visible');
+            } else {
+                navbar.classList.remove('scrolled');
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        // Back to top
+        document.getElementById('backToTop').addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Active navigation
+        const sections = document.querySelectorAll('section[id]');
+        
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 200) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Formulaire contact
+        const contactForm = document.getElementById('contactForm');
+        if (contactForm) {
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Merci pour votre demande ! Notre équipe vous répond sous 2 heures ouvrées pour confirmer votre réservation.');
+                this.reset();
+            });
+        }
+
+        // Newsletter
+        document.querySelector('.newsletter-form')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Merci pour votre inscription ! Vous recevrez notre prochaine lettre d’inspiration.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
